@@ -15,18 +15,12 @@ b.addEventListener("click", function (event) {
   console.log("b: ", this);
 
 
-let clickedElement = null;
-window.addEventListener("click", function (event) {
-  clickedElement = event.target.outerHTML;
-  console.log("%cCLICKED ELEMENT: " + clickedElement, "color: red");
-})
-
-  function innerFuncOne() {
+  function innerFuncOne(param) {
     // Tutaj this wskazuje na element Window, bo funkcja została
     //wywołana bez żadnego kontekstu.
-    console.log("innerFuncOne: ", this);
+    console.log("innerFuncOne: ", param);
   }
 
-  innerFuncOne();
+  innerFuncOne(this);
 
 });
