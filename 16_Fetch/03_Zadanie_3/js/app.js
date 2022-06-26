@@ -13,6 +13,7 @@ function fetchHolidays() {
         .then(function (data) {
             console.log(data.holidays);
             const ul = document.createElement("ul");
+            ul.classList.add("list");
             data.holidays.forEach(function (holiday) {
                 const li = document.createElement("li");
                 const h3Name = document.createElement("h3");
@@ -32,10 +33,9 @@ function fetchHolidays() {
         });
 }
 
-
 select.addEventListener("change", function () {
     mainDiv.innerText = "";
     fetchHolidays();
-})
+});
 
 fetchHolidays();
