@@ -1,5 +1,7 @@
 function getLastNumbers(arg, array) {
-
+    if(typeof arg != 'number') {
+        return [];
+    }
     let result = [];
     for (let i = array.length - arg; i < array.length; i++) {
         result.push(array[i]);
